@@ -157,8 +157,8 @@
         <article class="card span-2">
           <div class="card-media">
             <img
-              src="img/projects/HairDryer.png"
-              alt="SolidWorks HairDryer model"
+              src="img/projects/Hairdryer.png"
+              alt="SolidWorks Hairdryer model"
               loading="lazy"
             />
             <a
