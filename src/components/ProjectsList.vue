@@ -1,31 +1,52 @@
 <template>
-    <div>
-      <div class="projects-list">
-        <template v-for="project in projects">
-          <div
-            :key="project.id"
-              @click="showDetails(project)"
-              class="project-item"
-              :class="{ 'wide': project.isWide, 'high': project.isHigh }">
-            <div class="project-item-image" :style="{ 'background-image': 'url(' + project.iconUrl + ')' }">
-            </div>
-            <div class="title-bar" :style="{ 'background-color': project.accentColor + 'DD' }">
-                <div class="title-text">
-                  {{ project.name }}
-                </div>
-              </div>
+  <div>
+    <div class="projects-list">
+      <template v-for="project in projects">
+        <div
+          :key="project.id"
+          @click="showDetails(project)"
+          class="project-item"
+          :class="{ 'wide': project.isWide, 'high': project.isHigh }"
+        >
+          <!-- Media: video or image fallback -->
+          <div class="project-item-media">
+            <template v-if="project.thumbVideoUrl">
+              <video
+                class="project-media zoomable"
+                autoplay
+                loop
+                muted
+                playsinline
+                :poster="project.thumbPosterUrl || project.iconUrl"
+              >
+                <source :src="project.thumbVideoUrl" type="video/mp4" />
+              </video>
+            </template>
+            <template v-else>
+              <div
+                class="project-item-image zoomable"
+                :style="{ backgroundImage: 'url(' + project.iconUrl + ')' }"
+              ></div>
+            </template>
           </div>
-        </template>
-      </div>
 
-      <ProjectDetailsOverlay
-        v-on:close="showPopup = false"
-        :visible="showPopup"
-        :title="popupTitle"
-        :htmlContent="popupContent"
-        :color="popupColor"
-      />
+          <div class="title-bar" :style="{ 'background-color': project.accentColor + 'DD' }">
+            <div class="title-text">
+              {{ project.name }}
+            </div>
+          </div>
+        </div>
+      </template>
     </div>
+
+    <ProjectDetailsOverlay
+      v-on:close="showPopup = false"
+      :visible="showPopup"
+      :title="popupTitle"
+      :htmlContent="popupContent"
+      :color="popupColor"
+    />
+  </div>
 </template>
 
 <script lang="ts">
@@ -41,7 +62,7 @@ export default Vue.extend({
   props: {
     projects: Array
   },
-  data: function () {
+  data() {
     return {
       showPopup: false,
       popupTitle: "",
@@ -50,22 +71,18 @@ export default Vue.extend({
     };
   },
   methods: {
-    showDetails: function (item: ProjectData) {
-      // if (event) {
-      //   alert(event.target);
-      // }
+    showDetails(item: ProjectData) {
       this.popupTitle = item.name;
       this.popupColor = item.accentColor;
       this.popupContent = item.htmlDescription;
       this.showPopup = true;
-      window.scrollTo(0,0);
+      window.scrollTo(0, 0);
     },
   },
 });
 </script>
 
 <style scoped>
-
 .project-item {
   height: 300px;
   margin-bottom: 20px;
@@ -75,21 +92,40 @@ export default Vue.extend({
   overflow: hidden;
 }
 
+/* Media wrapper fills card */
+.project-item-media {
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+
+/* Image (background) version */
 .project-item-image {
   background-size: cover;
   background-position: center;
   height: 100%;
   width: 100%;
-  transition: all 0.2s;
+  transition: transform 0.2s ease;
 }
-.project-item-image:hover {
-  -webkit-transform: scale(1.1);
-  -ms-transform: scale(1.1);
+
+/* Video version */
+.project-media {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;            /* crop to fill like background-size: cover */
+  transition: transform 0.2s ease;
+  /* Ensure clicks still hit the card for the overlay */
+  pointer-events: none;
+}
+
+/* Unified hover zoom for both image and video */
+.project-item:hover .zoomable {
   transform: scale(1.1);
 }
 
 .project-item:hover {
-filter: brightness(120%);
+  filter: brightness(120%);
 }
 
 .title-bar {
@@ -103,7 +139,7 @@ filter: brightness(120%);
   padding: 10px;
 }
 
-@media only screen and (min-width: 620px){
+@media only screen and (min-width: 620px) {
   .projects-list {
     max-width: 900px;
     display: grid;
@@ -125,7 +161,4 @@ filter: brightness(120%);
     grid-row-end: span 2;
   }
 }
-
-
-
 </style>

@@ -1,15 +1,20 @@
 <template>
   <div id="app">
-    
-    <link rel="stylesheet" href="@/assets/projects/projects.css" type="text/css">
+    <!-- particles layer (behind everything) -->
+    <div id="particles-js"></div>
 
-    <Header />
-    <div class="main">
-      <transition name="fade" mode="out-in">
-        <router-view/>
-      </transition>
+    <!-- app content -->
+    <div class="app-content">
+      <link rel="stylesheet" href="@/assets/projects/projects.css" type="text/css">
+
+      <Header />
+      <div class="main">
+        <transition name="fade" mode="out-in">
+          <router-view/>
+        </transition>
+      </div>
+      <Footer />
     </div>
-    <Footer />
   </div>
 </template>
 
@@ -21,32 +26,72 @@ import Helpers from './helpers';
 
 export default Vue.extend({
   name: 'App',
-  components: {
-    Header, Footer
+  components: { Header, Footer },
+  mounted() {
+    // Only initialize if the CDN loaded successfully
+    if (window.particlesJS) {
+      const config: Record<string, unknown> = {
+        particles: {
+          number: { value: 300, density: { enable: true, ['value_area']: 800 } },
+          color: { value: '#ffffff' },
+          shape: { type: 'circle' },
+          opacity: { value: 0.8, random: true },
+          size: { value: 2.5, random: true },
+          move: { enable: true, speed: 0.9 },
+          ['line_linked']: { enable: false }
+        },
+        interactivity: {
+          ['detect_on']: 'canvas',
+          events: {
+            onhover: { enable: true, mode: 'repulse' },
+            onclick: { enable: true, mode: 'push' },
+            resize: true
+          },
+          modes: {
+            repulse: { distance: 80, duration: 0.4 },
+            push: { ['particles_nb']: 10 }
+          }
+        },
+        ['retina_detect']: true
+      };
+
+      window.particlesJS('particles-js', config);
+    }
+  },
+  beforeDestroy() {
+    const list = window.pJSDom;
+    if (Array.isArray(list) && list.length) {
+      for (const item of list) {
+        item?.pJS?.fn?.vendors?.destroypJS?.();
+      }
+      window.pJSDom = [];
+    }
   }
 });
 
 // Preload heavy images or gifs that are used in other pages
 Helpers.preloadImages([
-  "img/projects/project-1-icon.png",
-  "img/projects/project-2-icon.png",
-  "img/projects/project-3-icon.png"
+  'img/projects/project-1-icon.png',
+  'img/projects/project-2-icon.png',
+  'img/projects/project-3-icon.png'
 ]);
-
 </script>
 
-<style lang="less">
 
+<style lang="less">
 @import './css/projects.less';
 @import './css/variables.less';
 
 html, body {
   margin: 0px;
-  background-color: @bodyBgColor;
+  background: url('/img/SpaceBackgroundAlt.png') no-repeat center center fixed;
+  background-size: cover;
 }
 
 #app {
-  background-color: @contentBgColor;
+  position: relative; /* so the particles child can sit behind */
+  background: url('/img/SpaceBackground.png') no-repeat center center fixed;
+  background-size: cover;
   color: @textColor;
 
   font-family: 'Karla', Helvetica, Arial, sans-serif;
@@ -58,12 +103,25 @@ html, body {
   text-align: justify;
 }
 
+/* particles canvas fills viewport behind content */
+#particles-js {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none; /* don't block clicks */
+}
+
+.app-content {
+  position: relative;
+  z-index: 1; /* sits above the particles */
+}
+
 h1, h2, h3, h4, h5 {
   text-align: left;
 }
 
 a {
-  color: @textColor;
+  color: #00ffff;
   text-decoration: none;
   opacity: 0.5;
 }
@@ -78,14 +136,14 @@ h1 {
   margin-bottom: 40px;
   margin-left: -2px; // hack to make it "seem" more aligned with smaller text content
   line-height: 1.1em;
+  color: #00ffff;
 }
 
 .main {
-    padding: 12px;
-  }
+  padding: 12px;
+}
 
 @media only screen and (min-width: 620px){
-
   #app {
     text-align: left;
     line-height: 1.8em;
@@ -93,7 +151,7 @@ h1 {
 
   h1 {
     margin-top: 0.67em;
-    margin-bottom: 80px;
+    margin-bottom: 20px;
     line-height: 0.7em;
   }
 
