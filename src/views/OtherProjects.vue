@@ -157,7 +157,7 @@
         <article class="card span-2">
           <div class="card-media">
             <img
-              src="img/projects/HairDryer.png"
+              src="/portfolio/img/projects/HairDryer.png"
               alt="SolidWorks HairDryer model"
               loading="lazy"
             />
@@ -178,7 +178,7 @@
           <article class="card">
             <div class="card-media">
               <img
-                src="img/projects/Hammer.png"
+                src="/portfolio/img/projects/Hammer.png"
                 alt="SolidWorks Hammer model"
                 loading="lazy"
               />
@@ -197,7 +197,7 @@
           <article class="card">
             <div class="card-media">
               <img
-                src="img/projects/ToothpasteTube.png"
+                src="/portfolio/img/projects/ToothpasteTube.png"
                 alt="SolidWorks Toothpaste Tube model"
                 loading="lazy"
               />

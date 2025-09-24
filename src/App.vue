@@ -90,7 +90,7 @@ html, body {
 
 #app {
   position: relative; /* so the particles child can sit behind */
-  background: url('/img/SpaceBackground.png') no-repeat center center fixed;
+  background: url('/portfolio/img/SpaceBackground.png') no-repeat center center fixed;
   background-size: cover;
   color: @textColor;
 
