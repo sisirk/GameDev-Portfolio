@@ -71,9 +71,9 @@ export default Vue.extend({
 
 // Preload heavy images or gifs that are used in other pages
 Helpers.preloadImages([
-  'img/projects/project-1-icon.png',
-  'img/projects/project-2-icon.png',
-  'img/projects/project-3-icon.png'
+  'img/projects/Steam_VerticalCapsule.png',
+  'img/projects/BubbleBobbler_Thumbnail.png',
+  'img/projects/deal-icon.png'
 ]);
 </script>
 
@@ -84,13 +84,13 @@ Helpers.preloadImages([
 
 html, body {
   margin: 0px;
-  background: url('/portfolio/img/SpaceBackgroundAlt.png') no-repeat center center fixed;
+  background: url('/GameDev-Portfolio/img/SpaceBackgroundAlt.png') no-repeat center center fixed;
   background-size: cover;
 }
 
 #app {
   position: relative; /* so the particles child can sit behind */
-  background: url('/portfolio/img/SpaceBackground.png') no-repeat center center fixed;
+  background: url('/GameDev-Portfolio/img/SpaceBackground.png') no-repeat center center fixed;
   background-size: cover;
   color: @textColor;
 
