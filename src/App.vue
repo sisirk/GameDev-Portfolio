@@ -84,7 +84,7 @@ Helpers.preloadImages([
 
 html, body {
   margin: 0px;
-  background: url('/img/SpaceBackgroundAlt.png') no-repeat center center fixed;
+  background: url('/portfolio/img/SpaceBackgroundAlt.png') no-repeat center center fixed;
   background-size: cover;
 }
 
