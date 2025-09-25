@@ -18,7 +18,7 @@
       </div>
 
       <div style="margin-top: 20px;">
-        Before diving diving full-time into game dev, I worked as a software engineer at Microsoft and Amazon, which means I can debug a memory leak... and
+        Before diving full-time into game dev, I worked as a software engineer at Microsoft and Amazon, which means I can debug a memory leak... and
         accidentally create one in the same day. Now, I use those skills to wrangle procedural generation, enemy AI, and sometimes gravity itself.
       </div>
 
