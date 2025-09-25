@@ -51,15 +51,15 @@
       <div class="experience">
         <ul>
           <li>
-            Engineered a procedural world generation system for a cross-platform 3D runner (Android, iOS, PC, console) using
-            layered Perlin Noise, spatial partitioning, seed control, and terrain masks for dynamic biome diversity.
+            Engineered a procedural world generation system in <strong>Unreal Engine (C++)</strong> for a cross-platform <strong>(Android, iOS, PC, console)</strong>
+            3D runner using <strong>layered Perlin Noise, spatial partitioning, seed control, and terrain masks</strong> for biome diversity.
           </li>
           <li>
-            Implemented asynchronous chunk streaming with greedy meshing, mesh LOD, and multithreaded job queues to
+            Implemented asynchronous chunk streaming with <strong>greedy meshing</strong>, mesh LOD, and multithreaded job queues to
             minimize frame hitches, reduce draw calls, and optimize rendering in large open spaces.
           </li>
           <li>
-            Developed a modular AI architecture combining behavior trees, FSMs, and custom A* pathfinding with
+            Developed a modular <strong>AI</strong> architecture combining <strong>behavior trees, FSMs, and custom A*</strong> pathfinding with
             parameterized heuristics to enable terrain-aware, decision-driven enemies that react intelligently to player behavior.
           </li>
           <li>
@@ -84,23 +84,23 @@
       <div class="experience">
         <ul>
           <li>
-            Oversaw daily TPC-E, TPC-H, and HammerDB workloads on Windows and Linux, analyzing benchmark data with
-            PowerBi to identify regression, improving performance monitoring.
+            Oversaw daily TPC-E, TPC-H, and HammerDB workloads on <strong>Windows</strong> and <strong>Linux</strong>, analyzing benchmark data with
+            <strong>PowerBi</strong> to identify regression, improving performance monitoring.
           </li>
           <li>
-            Developed a self-service web portal using C#, .NET, JavaScript, React, Node.js, Python, and Flask, integrating
-            automated data pipelines with ML-ready anomaly detection support, and reducing manual interventions by 50%.
+            Developed a self-service web portal using <strong>C#, .NET, JavaScript, React, Node.js, Python, and Flask</strong>, integrating
+            automated data pipelines with <strong>ML-ready</strong> anomaly detection support, and reducing manual interventions by 50%.
           </li>
           <li>
-            Designed and optimized SQL databases in SSMS, creating stored procedures and automating data handling to
+            Designed and optimized <strong>SQL</strong> databases in <strong>SSMS</strong>, creating stored procedures and automating data handling to
             enhance query performance, reduce execution times, and improve system reliability.
           </li>
           <li>
-            Led regression analysis for Windows Server 2025 vs. Windows Server 2022, automating Xperf and Kernrate data
-            collection with C# scripts using .NET diagnostics tools for deeper performance insights.
+            Led regression analysis for <strong>Windows Server 2025</strong> vs. <strong>Windows Server 2022</strong>, automating Xperf and Kernrate data
+            collection with <strong>C#</strong> scripts using <strong>.NET</strong> diagnostics tools for deeper performance insights.
           </li>
           <li>
-            Tested the impact of memory compression across SQL Server instances, using PowerShell scripts to optimize memory
+            Tested the impact of memory compression across <strong>SQL</strong> Server instances, using <strong>PowerShell</strong> scripts to optimize memory
             usage and extract telemetry for exploratory data analysis and future use in predictive resource management.
           </li>
         </ul>
@@ -125,15 +125,15 @@
             enhancing business processes across diverse verticals including hotels, resorts, and hospitals.
           </li>
           <li>
-            Engineered and implemented multiple adapters with Kotlin, utilizing AWS services and API calls to seamlessly
+            Engineered and implemented multiple adapters with <strong>Kotlin</strong>, utilizing <strong>AWS</strong> services and API calls to seamlessly
             integrate Alexa skills into EU-based subscriptions for various Amazon services, boosting user engagement.
           </li>
           <li>
-            Optimized ASP's canary test suites using AWS tools, ensuring rigorous NLP-based testing of "Hey Alexa..."
+            Optimized ASP's canary test suites using <strong>AWS</strong> tools, ensuring rigorous <strong>NLP-based testing</strong> of "Hey Alexa..."
             utterances across subscriptions, and reducing false positives/negatives in voice recognition by 20-30%.
           </li>
           <li>
-            Automated the integration of canary test results with TestRail via the TestRail API, improving testing efficiency and
+            Automated the integration of canary test results with <strong>TestRail</strong> via the <strong>TestRail API</strong>, improving testing efficiency and
             allowing the ASP team to effortlessly monitor the status of each test.
           </li>
         </ul>
@@ -158,12 +158,12 @@
             Minecraft's pathfinding algorithm, enabling seamless compatibility with actors and paths of various sizes.
           </li>
           <li>
-            Led the development of a robust standalone app in C++, employing the A* algorithm for prototyping and
+            Led the development of a robust standalone app in <strong>C++</strong>, employing the <strong>A*</strong> algorithm for prototyping and
             meticulously testing diverse pathfinders. This significantly enhanced the performance and navigation capabilities of
             the actor when testing.
           </li>
           <li>
-            Developed a dynamic standalone 3D visualizer using C# and Unity to vividly render custom paths and created tools for thorough
+            Developed a dynamic standalone 3D visualizer using <strong>C#</strong> and <strong>Unity</strong> to vividly render custom paths and created tools for thorough
             debugging. This enhanced the team's ability to analyze and optimize paths with higher precision and efficiency.
           </li>
         </ul>
@@ -221,8 +221,8 @@
             garnering hundreds of downloads and receiving positive user reviews on Google Play and the App Store.
           </li>
           <li>
-            Designed and developed around 20 custom assets, pixel art, and animations for various game elements, using C# and
-            the Unity Game Engine.
+            Designed and developed around 20 custom assets, pixel art, and animations for various game elements, using <strong>C#</strong> and
+            the <strong>Unity</strong> Game Engine.
           </li>
           <li>
             Led play-testing sessions, and incorporated user feedback, leading to iterative improvements and a polished final product.
@@ -238,9 +238,9 @@
 
       <div class="experience">
         <ul>
-          <li>Built a 3D platformer in Unreal Engine 5 with C++, using physics-based bubbles for traversal, and puzzle-solving.</li>
+          <li>Built a 3D platformer in Unreal Engine 5 with <strong>C++</strong>, using physics-based bubbles for traversal, and puzzle-solving.</li>
           <li>Engineered a custom Chaos Physics system for buoyancy, elastic collisions, and reactive environmental forces.</li>
-          <li>Implemented AI with Behavior Trees, EQS, and NavMesh for responsive enemy movement and targeting.</li>
+          <li>Implemented AI with <strong>Behavior Trees, EQS, and NavMesh</strong> for responsive enemy movement and targeting.</li>
         </ul>
       </div>
 
@@ -251,9 +251,9 @@
 
       <div class="experience">
         <ul>
-          <li>Built a Unity-based turn-based battle prototype with stat-driven combat, enemy AI, and capture mechanics.</li>
-          <li>Integrated PokéAPI data using JSON parsing and filters to enable dynamic team building across Android and web.</li>
-          <li>Implemented persistent progression using SQLite for session continuity and team management.</li>
+          <li>Built a <strong>Unity</strong>-based turn-based battle prototype with stat-driven combat, enemy AI, and capture mechanics.</li>
+          <li>Integrated <strong>PokéAPI</strong> data using <strong>JSON</strong> parsing and filters to enable dynamic team building across <strong>Android</strong> and <strong>Web</strong>.</li>
+          <li>Implemented persistent progression using <strong>SQLite</strong> for session continuity and team management.</li>
         </ul>
       </div>
 
@@ -264,9 +264,9 @@
 
       <div class="experience">
         <ul>
-          <li>Built a desktop tool in Python with a Tkinter GUI and OpenCV backend for real-time image transformations.</li>
-          <li>Integrated optional PyTorch/TensorFlow models to experiment with ML-based filters for stylization.</li>
-          <li>Used PySpark to batch pre-process large image sets and optimized matrix operations with NumPy for 30% speedup.</li>
+          <li>Built a desktop tool in <strong>Python</strong> with a <strong>Tkinter</strong> GUI and OpenCV backend for real-time image transformations.</li>
+          <li>Integrated optional <strong>PyTorch/TensorFlow</strong> models to experiment with <strong>ML-based</strong> filters for stylization.</li>
+          <li>Used <strong>PySpark</strong> to batch pre-process large image sets and optimized matrix operations with <strong>NumPy</strong> for 30% speedup.</li>
         </ul>
       </div>
 
