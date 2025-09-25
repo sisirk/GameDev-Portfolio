@@ -31,7 +31,7 @@
     </div>
 
     <div class="photo">
-      <img src="img/resume-photo.png" alt="Photo of Sisir" />
+      <img src="img/resume-photo.png" alt="Photo of Sisir" width="256" height="256" />
     </div>
 
     <div style="clear:both"></div>
@@ -73,7 +73,7 @@
 
       <br/>
       <h3>
-        Software Design Engineer I
+        Software Design Engineer
         <span class="company-name">
           · Microsoft
         </span>
@@ -110,7 +110,7 @@
 
       <br/>
       <h3>
-        Software Development Engineer I
+        Software Development Engineer
         <span class="company-name">
           · Amazon
         </span>
@@ -378,7 +378,7 @@ h4 {
   padding: 0px;
   padding-top: 15px;
   font-style: italic;
-  opacity: 0.5;
+  opacity: 0.7;
 }
 
 .paragraph {
@@ -405,7 +405,7 @@ h4 {
 
 .tech-stack {
   font-style: italic;
-  color: #a8a8a8
+  color: #c2c2c2
 }
 
 .photo {
@@ -414,7 +414,7 @@ h4 {
 }
 
 .company-name {
-  opacity: 0.5;
+  opacity: 0.7;
   color: #00ffff
 }
 

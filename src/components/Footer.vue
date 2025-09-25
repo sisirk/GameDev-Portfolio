@@ -19,17 +19,16 @@ export default Vue.extend({
 @import '../css/variables.less';
 
 .footer {
-  background-color: @bodyBgColor;
   width: 100%;
   font-size: 0.8em;
-  opacity: 0.7;
-  padding-bottom: 30px;
+  padding: 20px 40px;
 }
 
 .left, .right {
-    padding-top: 10px;
-    text-align: center;
-  }
+  opacity: 0.7;
+  padding-top: 10px;
+  text-align: center;
+}
 
 @media only screen and (min-width: 620px){
 

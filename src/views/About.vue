@@ -23,21 +23,24 @@
       </div>
 
       <div style="margin-top: 20px;">
-        When I'm not teaching a frog how to swing a katana at unsuspecting enemies, I create stylized 3D assets and occasionally
-        lose track of time in Blender (we've all been there).
+        When I'm not teaching a frog how to swing a katana at unsuspecting enemies, I create
+        <a href="https://www.fab.com/sellers/NinjaFroggy" target="_blank">stylized 3D assets</a>,
+        occasionally lose track of time in Blender (we've all been there), and document the chaos on my
+        <a href="https://www.youtube.com/channel/UCsFRYYdH_maM6EVQYDYJvVg" target="_blank">YouTube</a>
+        channel.
       </div>
 
       <div style="margin-top: 40px;">
         Right now it's just me, endless lines of code, and questionable life choices at 2 AM. If you'd like to chat about games, swap ideas, or team up on
         something cool, you can reach me at
-        <a href="mailto:contact@galacticgatewaygames.com">contact@galacticgatewaygames.com</a>
+        <a href="mailto:sisirkadiveti@gmail.com">sisirkadiveti@gmail.com</a>
         or connect with me
         <router-link to="/contact">here</router-link>.
       </div>
     </div>
 
     <div class="photo">
-      <img src="img/BrainRotFroggy.png" alt="Avatar of Froggy" />
+      <img src="img/Froggy_Profile.png" alt="Avatar of Froggy" width="256" height="256" />
     </div>
 
     <div style="clear:both"></div>
@@ -48,7 +51,7 @@
 <style scoped>
 .paragraph {
   max-width: 700px;
-  margin-bottom: 20px;
+  margin-bottom: -30px;
 }
 
 .photo {

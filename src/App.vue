@@ -37,20 +37,8 @@ export default Vue.extend({
           shape: { type: 'circle' },
           opacity: { value: 0.8, random: true },
           size: { value: 2.5, random: true },
-          move: { enable: true, speed: 0.9 },
+          move: { enable: true, speed: 0.5 },
           ['line_linked']: { enable: false }
-        },
-        interactivity: {
-          ['detect_on']: 'canvas',
-          events: {
-            onhover: { enable: true, mode: 'repulse' },
-            onclick: { enable: true, mode: 'push' },
-            resize: true
-          },
-          modes: {
-            repulse: { distance: 80, duration: 0.4 },
-            push: { ['particles_nb']: 10 }
-          }
         },
         ['retina_detect']: true
       };
@@ -82,6 +70,31 @@ Helpers.preloadImages([
 @import './css/projects.less';
 @import './css/variables.less';
 
+.header {
+  position: relative;
+  z-index: -2; /* stay above particles */
+}
+
+.header::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 0;
+  bottom: 0;
+  width: 100vw;
+  background: url('/GameDev-Portfolio/img/SpaceBackgroundAlt.png') no-repeat center center fixed;
+  background-size: cover;
+  opacity: 0.7;
+  z-index: -2;
+  pointer-events: none;
+}
+
+.header > * {
+  position: relative;
+  z-index: -2;
+}
+
 html, body {
   margin: 0px;
   background: url('/GameDev-Portfolio/img/SpaceBackgroundAlt.png') no-repeat center center fixed;
@@ -109,6 +122,7 @@ html, body {
   inset: 0;
   z-index: 0;
   pointer-events: none; /* don't block clicks */
+  opacity: 0.75;
 }
 
 .app-content {

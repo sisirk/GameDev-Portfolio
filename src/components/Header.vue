@@ -15,9 +15,6 @@ import Vue from "vue";
 
 export default Vue.extend({
   name: "Header",
-  //   props: {
-  //     msg: String,
-  //   },
 });
 </script>
 
