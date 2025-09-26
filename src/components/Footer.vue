@@ -1,8 +1,12 @@
 <template>
   <div class="footer">
-
-    <div class="left">Portfolio by Sisir</div>
-    <div class="right">Reach me at <a href="mailto:sisirkadiveti@gmail.com">sisirkadiveti@gmail.com</a> or <router-link to="/contact">through here</router-link></div>
+    <div class="footer__inner">
+      <div class="left">Portfolio by Sisir</div>
+      <div class="right">
+        Reach me at <a href="mailto:sisirkadiveti@gmail.com">sisirkadiveti@gmail.com</a>
+        or <router-link to="/contact">through here</router-link>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -15,37 +19,46 @@ export default Vue.extend({
 </script>
 
 <style scoped lang="less">
-
 @import '../css/variables.less';
 
 .footer {
+  position: absolute;      /* sit at the bottom of .app-content */
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10;
   width: 100%;
-  font-size: 0.8em;
-  padding: 20px 40px;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  will-change: backdrop-filter;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+}
+
+.footer { border-top: 1px solid rgba(255,255,255,0.08); }
+
+.footer__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 16px 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
 }
 
 .left, .right {
-  opacity: 0.7;
-  padding-top: 10px;
+  opacity: 0.5;
   text-align: center;
 }
 
 @media only screen and (min-width: 620px){
-
-  .footer {
-    padding: 0;
-  }
-
   .left, .right {
-    padding: 20px;
+    padding: 8px 0;
   }
 
-  .left {
-    float: left;
-  }
-
-  .right {
-    float:right;
-  }
+  .left { text-align: left; }
+  .right { text-align: right; }
 }
 </style>

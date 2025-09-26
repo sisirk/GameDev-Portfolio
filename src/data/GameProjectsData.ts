@@ -26,10 +26,10 @@ export default [
         </div>
 
         <div class="paragraph center">
-            <img class="phone-screenshot" src="img/projects/NinjaFroggy_Screenshot1.png" alt="Ninja Froggy Screenshot" />
-            <img class="phone-screenshot" src="img/projects/NinjaFroggy_Screenshot2.png" alt="Ninja Froggy Screenshot" />
-            <img class="phone-screenshot" src="img/projects/NinjaFroggy_Screenshot3.png" alt="Ninja Froggy Screenshot" />
-            <img class="phone-screenshot" src="img/projects/NinjaFroggy_Screenshot4.png" alt="Ninja Froggy Screenshot" />
+            <img class="pc-screenshot" src="img/projects/NinjaFroggy_Screenshot1.png" alt="Ninja Froggy Screenshot" />
+            <img class="pc-screenshot" src="img/projects/NinjaFroggy_Screenshot2.png" alt="Ninja Froggy Screenshot" />
+            <img class="pc-screenshot" src="img/projects/NinjaFroggy_Screenshot3.png" alt="Ninja Froggy Screenshot" />
+            <img class="pc-screenshot" src="img/projects/NinjaFroggy_Screenshot4.png" alt="Ninja Froggy Screenshot" />
         </div>
 
         <!-- ============================= -->
@@ -102,7 +102,7 @@ export default [
                 <div class="tech-caption">AI Behavior Showcase (Chest Mimic)</div>
             </div>
         </div>
-        `, "#588700", true, true,
+        `, "#009696ff", true, true,
         {
             thumbVideoUrl: "img/projects/NinjaFroggy_Gameplay.mp4",
             thumbPosterUrl: "img/projects/Steam_VerticalCapsule.png"
@@ -178,7 +178,7 @@ export default [
             <p><em><strong>Anti-Bubble Turret:</strong></em> Static defense that prioritizes destroying player bubbles on sight, forcing the player to neutralize it (or stealth past) before proceeding.</p>
             <p><em><strong>Development Status:</strong></em> Concept and behavior specs are drafted; functional prototypes are incomplete due to time constraints.</p>
         </div>
-        `, "#d17d00", false, false,
+        `, "#009696ff", false, false,
         {
             thumbVideoUrl: "img/projects/BubbleBobbler_Gameplay.mp4",
             thumbPosterUrl: "img/projects/BubbleBobbler_Thumbnail.png"
@@ -240,5 +240,5 @@ export default [
         <h3>Collaborative Development & Content Creation</h3>
         <p>This project was built as part of the <a href="https://earthgames.org/" target="_blank">EarthGames</a> team of eight. My contributions focused on <strong>UI/UX flow</strong> and <strong>technical stability across mobile devices</strong>, as well as designing and developing around <strong>20 custom assets, pixel art, and animations</strong> for game elements.</p>
     </div>
-    `, "#269dde"),
+    `, "#009696ff"),
 ];

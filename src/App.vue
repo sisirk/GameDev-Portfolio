@@ -27,8 +27,32 @@ import Helpers from './helpers';
 export default Vue.extend({
   name: 'App',
   components: { Header, Footer },
+
+  data() {
+    return {
+      // store a typed handler reference so we can remove it later
+      resizeHandler: null as null | (() => void),
+    };
+  },
+
   mounted() {
-    // Only initialize if the CDN loaded successfully
+    const updateFooterVar = () => {
+      this.$nextTick(() => {
+        const el = document.querySelector('.footer') as HTMLElement | null;
+        const h = el ? el.offsetHeight : 72;
+        document.documentElement.style.setProperty('--footer-h', `${h}px`);
+      });
+    };
+
+    // keep a reference (no "any")
+    this.resizeHandler = updateFooterVar;
+
+    // initial compute + on route change + on resize
+    updateFooterVar();
+    this.$watch('$route', () => updateFooterVar());
+    window.addEventListener('resize', updateFooterVar);
+
+    // particles
     if (window.particlesJS) {
       const config: Record<string, unknown> = {
         particles: {
@@ -42,11 +66,17 @@ export default Vue.extend({
         },
         ['retina_detect']: true
       };
-
       window.particlesJS('particles-js', config);
     }
   },
+
   beforeDestroy() {
+    // remove the exact same handler reference (no empty arrow)
+    if (this.resizeHandler) {
+      window.removeEventListener('resize', this.resizeHandler);
+      this.resizeHandler = null;
+    }
+
     const list = window.pJSDom;
     if (Array.isArray(list) && list.length) {
       for (const item of list) {
@@ -70,35 +100,9 @@ Helpers.preloadImages([
 @import './css/projects.less';
 @import './css/variables.less';
 
-.header {
-  position: relative;
-  z-index: -2; /* stay above particles */
-}
-
-.header::before {
-  content: "";
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  top: 0;
-  bottom: 0;
-  width: 100vw;
-  background: url('/GameDev-Portfolio/img/SpaceBackgroundAlt.png') no-repeat center center fixed;
-  background-size: cover;
-  opacity: 0.7;
-  z-index: -2;
-  pointer-events: none;
-}
-
-.header > * {
-  position: relative;
-  z-index: -2;
-}
-
 html, body {
   margin: 0px;
-  background: url('/GameDev-Portfolio/img/SpaceBackgroundAlt.png') no-repeat center center fixed;
-  background-size: cover;
+  height: 100%;
 }
 
 #app {
@@ -128,7 +132,10 @@ html, body {
 .app-content {
   position: relative;
   z-index: 1; /* sits above the particles */
+  min-height: 100vh;
 }
+
+body { overflow-x: hidden; }
 
 h1, h2, h3, h4, h5 {
   text-align: left;
@@ -148,7 +155,7 @@ h1 {
   font-weight: 100;
   margin-top: -10px;
   margin-bottom: 40px;
-  margin-left: -2px; // hack to make it "seem" more aligned with smaller text content
+  margin-left: -2px;
   line-height: 1.1em;
   color: #00ffff;
 }
@@ -173,7 +180,7 @@ h1 {
     padding: 0px 40px 40px 180px;
   }
 
-  .main, .header, .footer {
+  .main {
     max-width: 1200px;
     margin: 0 auto;
   }
