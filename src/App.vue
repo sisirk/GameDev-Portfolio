@@ -102,6 +102,8 @@ Helpers.preloadImages([
 
 html, body {
   margin: 0px;
+  background: url('/GameDev-Portfolio/img/SpaceBackground.png') no-repeat center center fixed;
+  background-size: cover;
   height: 100%;
 }
 
