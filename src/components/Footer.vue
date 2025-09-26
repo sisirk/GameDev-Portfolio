@@ -38,7 +38,7 @@ export default Vue.extend({
 .footer { border-top: 1px solid rgba(255,255,255,0.08); }
 
 .footer__inner {
-  max-width: 1200px;
+   width: 100%;
   margin: 0 auto;
   padding: 16px 40px;
 
@@ -48,12 +48,18 @@ export default Vue.extend({
   gap: 16px;
 }
 
-.left, .right {
+.left {
   opacity: 0.5;
-  text-align: center;
+  text-align: left;
 }
 
-@media only screen and (min-width: 620px){
+.right {
+  opacity: 0.5;
+  text-align: right;
+  margin-right: 100px;
+}
+
+@media only screen and (min-width: 1200px){
   .left, .right {
     padding: 8px 0;
   }
