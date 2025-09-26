@@ -304,11 +304,6 @@
       <h4>Bachelor of Science in Electrical and Computer Engineering</h4>
       <div>Specialty in digital signal processing (DSP)</div>
 
-      <!-- ========== -->
-      <!-- Languages -->
-      <!-- ========== -->
-      <h2>Languages</h2>
-      <h4>English, Spanish, Japanese, Hindi, Telugu</h4>
       <br/><br/><br/>
     </div>
   </div>

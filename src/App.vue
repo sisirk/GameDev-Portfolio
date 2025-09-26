@@ -36,23 +36,38 @@ export default Vue.extend({
   },
 
   mounted() {
-    const updateFooterVar = () => {
+    const updateFooterPadding = () => {
       this.$nextTick(() => {
-        const el = document.querySelector('.footer') as HTMLElement | null;
-        const h = el ? el.offsetHeight : 72;
-        document.documentElement.style.setProperty('--footer-h', `${h}px`);
+        const footer = document.querySelector('.footer') as HTMLElement | null;
+        const appContent = document.querySelector('.app-content') as HTMLElement | null;
+        if (!footer || !appContent) return;
+
+        // 1) Measure footer height and expose it (useful for CSS if needed)
+        const footerH = footer.offsetHeight || 72;
+        document.documentElement.style.setProperty('--footer-h', `${footerH}px`);
+
+        // 2) Only add bottom padding when the page actually needs to scroll
+        //    to reveal the content above the absolute footer.
+        //    Avoid measurement feedback by zeroing padding before measuring.
+        const prev = appContent.style.paddingBottom;
+        appContent.style.paddingBottom = '0px';
+
+        const viewportH = window.innerHeight;
+        // appContent.scrollHeight = content height without our spacer
+        const needsSpacer = appContent.scrollHeight > viewportH;
+
+        appContent.style.paddingBottom = needsSpacer ? `${footerH}px` : '0px';
       });
     };
 
-    // keep a reference (no "any")
-    this.resizeHandler = updateFooterVar;
+    this.resizeHandler = updateFooterPadding;
 
     // initial compute + on route change + on resize
-    updateFooterVar();
-    this.$watch('$route', () => updateFooterVar());
-    window.addEventListener('resize', updateFooterVar);
+    updateFooterPadding();
+    this.$watch('$route', () => updateFooterPadding());
+    window.addEventListener('resize', updateFooterPadding);
 
-    // particles
+    // particles (unchanged) ...
     if (window.particlesJS) {
       const config: Record<string, unknown> = {
         particles: {
